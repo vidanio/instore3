@@ -52,5 +52,30 @@ namespace player
         {
             this.Show();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            txtboxMusicFolder.Text = @"C:\";
+            fldbrwMusicFolder.SelectedPath = txtboxMusicFolder.Text;
+            // ToolTips de todos los controles
+            //    toolTipMain.SetToolTip(this.tabMusic,this.tabMusic.ToolTipText);
+
+        }
+
+        private void txtboxMusicFolder_Click(object sender, EventArgs e)
+        {
+            if (fldbrwMusicFolder.ShowDialog() == DialogResult.OK)
+            {
+                txtboxMusicFolder.Text = fldbrwMusicFolder.SelectedPath;
+            }
+        }
+
+        private void txtboxMessage_Click(object sender, EventArgs e)
+        {
+            if (openMsgToPlay.ShowDialog() == DialogResult.OK)
+            {
+                txtboxMessage.Text = openMsgToPlay.FileName;
+            }
+        }
     }
 }
