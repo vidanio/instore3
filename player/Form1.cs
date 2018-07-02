@@ -77,5 +77,66 @@ namespace player
                 txtboxMessage.Text = openMsgToPlay.FileName;
             }
         }
+
+        private void tbarMusic_Scroll(object sender, EventArgs e)
+        {
+            if (tbarMusic.Value >= tbarMin.Value)
+                lblMusicVol.Text = tbarMusic.Value.ToString();
+            else {
+                tbarMusic.Value = tbarMin.Value;
+            }
+        }
+
+        private void tbarPubli_Scroll(object sender, EventArgs e)
+        {
+            if (tbarPubli.Value >= tbarMin.Value)
+                lblPubliVol.Text = tbarPubli.Value.ToString();
+            else
+            {
+                tbarPubli.Value = tbarMin.Value;
+            }
+        }
+
+        private void tbarMsg_Scroll(object sender, EventArgs e)
+        {
+            if (tbarMsg.Value >= tbarMin.Value)
+                lblMsgVol.Text = tbarMsg.Value.ToString();
+            else
+            {
+                tbarMsg.Value = tbarMin.Value;
+            }
+        }
+
+        private void tbarMin_Scroll(object sender, EventArgs e)
+        {
+            // calculamos el maximo valor que puede tener FadeOut
+            int max = 0;
+
+            max = Math.Min(tbarMusic.Value, tbarPubli.Value);
+            max = Math.Min(max, tbarMsg.Value);
+
+            if (max >= tbarMin.Value)
+                lblFadeVol.Text = tbarMin.Value.ToString();
+            else
+            {
+                tbarMin.Value = max;
+            }
+        }
+
+        private void timeDesde_ValueChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(timeDesde.Value, timeHasta.Value) > 0)
+            {
+                timeDesde.Value = timeHasta.Value;
+            }
+        }
+
+        private void timeHasta_ValueChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(timeDesde.Value, timeHasta.Value) > 0)
+            {
+                timeHasta.Value = timeDesde.Value;
+            }
+        }
     }
 }
