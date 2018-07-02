@@ -45,7 +45,6 @@ namespace player
             {
                 enable_salir = true;
                 this.Close();
-
             }
         }
 
