@@ -69,16 +69,24 @@
             this.lblPubliVol = new System.Windows.Forms.Label();
             this.lblMsgVol = new System.Windows.Forms.Label();
             this.lblFadeVol = new System.Windows.Forms.Label();
+            this.axWMPMsg = new AxWMPLib.AxWindowsMediaPlayer();
+            this.axWMPMain = new AxWMPLib.AxWindowsMediaPlayer();
+            this.statusLblConn = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusLblPlaying = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusPbarPlaying = new System.Windows.Forms.ToolStripProgressBar();
             this.contextMainMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabMusic.SuspendLayout();
             this.tabControls.SuspendLayout();
+            this.statusBar.SuspendLayout();
             this.grpboxHoras.SuspendLayout();
             this.grpboxVolume.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbarMusic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbarPubli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbarMsg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbarMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWMPMsg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWMPMain)).BeginInit();
             this.SuspendLayout();
             // 
             // notifyBarIcon
@@ -134,6 +142,8 @@
             // 
             // tabMusic
             // 
+            this.tabMusic.Controls.Add(this.axWMPMain);
+            this.tabMusic.Controls.Add(this.axWMPMsg);
             this.tabMusic.Controls.Add(this.btnPlayMsg);
             this.tabMusic.Controls.Add(this.lblMessage);
             this.tabMusic.Controls.Add(this.txtboxMessage);
@@ -180,6 +190,10 @@
             // 
             // statusBar
             // 
+            this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusLblConn,
+            this.statusPbarPlaying,
+            this.statusLblPlaying});
             this.statusBar.Location = new System.Drawing.Point(3, 410);
             this.statusBar.Name = "statusBar";
             this.statusBar.Size = new System.Drawing.Size(750, 22);
@@ -485,6 +499,46 @@
             this.lblFadeVol.TabIndex = 7;
             this.lblFadeVol.Text = "10";
             // 
+            // axWMPMsg
+            // 
+            this.axWMPMsg.Enabled = true;
+            this.axWMPMsg.Location = new System.Drawing.Point(346, 369);
+            this.axWMPMsg.Name = "axWMPMsg";
+            this.axWMPMsg.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWMPMsg.OcxState")));
+            this.axWMPMsg.Size = new System.Drawing.Size(188, 38);
+            this.axWMPMsg.TabIndex = 6;
+            this.axWMPMsg.Visible = false;
+            // 
+            // axWMPMain
+            // 
+            this.axWMPMain.Enabled = true;
+            this.axWMPMain.Location = new System.Drawing.Point(138, 369);
+            this.axWMPMain.Name = "axWMPMain";
+            this.axWMPMain.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWMPMain.OcxState")));
+            this.axWMPMain.Size = new System.Drawing.Size(188, 38);
+            this.axWMPMain.TabIndex = 7;
+            this.axWMPMain.Visible = false;
+            // 
+            // statusLblConn
+            // 
+            this.statusLblConn.BorderStyle = System.Windows.Forms.Border3DStyle.Raised;
+            this.statusLblConn.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.statusLblConn.Name = "statusLblConn";
+            this.statusLblConn.Size = new System.Drawing.Size(123, 17);
+            this.statusLblConn.Text = "Conectado al Servidor";
+            // 
+            // statusLblPlaying
+            // 
+            this.statusLblPlaying.Name = "statusLblPlaying";
+            this.statusLblPlaying.Size = new System.Drawing.Size(290, 17);
+            this.statusLblPlaying.Text = "Playing \"Just Cant Get Enough - Depeche Mode.mp3\"";
+            // 
+            // statusPbarPlaying
+            // 
+            this.statusPbarPlaying.Name = "statusPbarPlaying";
+            this.statusPbarPlaying.Size = new System.Drawing.Size(100, 16);
+            this.statusPbarPlaying.Value = 60;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,6 +558,8 @@
             this.tabMusic.ResumeLayout(false);
             this.tabMusic.PerformLayout();
             this.tabControls.ResumeLayout(false);
+            this.statusBar.ResumeLayout(false);
+            this.statusBar.PerformLayout();
             this.grpboxHoras.ResumeLayout(false);
             this.grpboxHoras.PerformLayout();
             this.grpboxVolume.ResumeLayout(false);
@@ -512,6 +568,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbarPubli)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbarMsg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbarMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWMPMsg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWMPMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -557,6 +615,11 @@
         private System.Windows.Forms.DateTimePicker timeHasta;
         private System.Windows.Forms.Label lblHasta;
         private System.Windows.Forms.Button btnHorasOK;
+        private AxWMPLib.AxWindowsMediaPlayer axWMPMain;
+        private AxWMPLib.AxWindowsMediaPlayer axWMPMsg;
+        private System.Windows.Forms.ToolStripStatusLabel statusLblConn;
+        private System.Windows.Forms.ToolStripStatusLabel statusLblPlaying;
+        private System.Windows.Forms.ToolStripProgressBar statusPbarPlaying;
     }
 }
 
