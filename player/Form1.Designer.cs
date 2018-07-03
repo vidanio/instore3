@@ -156,6 +156,7 @@
             this.tabMenu.ShowToolTips = true;
             this.tabMenu.Size = new System.Drawing.Size(764, 461);
             this.tabMenu.TabIndex = 1;
+            this.tabMenu.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabMenu_Selected);
             // 
             // tabMusic
             // 

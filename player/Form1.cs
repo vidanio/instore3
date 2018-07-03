@@ -13,6 +13,7 @@ namespace player
     public partial class MainForm : Form
     {
         private bool enable_salir = false;
+        private bool enable_admin = false; // when 1st configured change it to true
 
         public MainForm()
         {
@@ -57,6 +58,8 @@ namespace player
         {
             txtboxMusicFolder.Text = @"C:\";
             fldbrwMusicFolder.SelectedPath = txtboxMusicFolder.Text;
+            if (!enable_admin) tabMenu.SelectTab(2);
+            else tabMenu.SelectTab(0);
             // ToolTips de todos los controles
             //    toolTipMain.SetToolTip(this.tabMusic,this.tabMusic.ToolTipText);
 
@@ -145,6 +148,15 @@ namespace player
             if ((txtboxURLServer.Text.Contains("http://") == false) && (txtboxURLServer.Text.Contains("https://") == false))
             {
                 errorSignal.SetError(txtboxURLServer, "URL no válida !!!");
+            }
+        }
+
+        private void tabMenu_Selected(object sender, TabControlEventArgs e)
+        {
+            if (!enable_admin) return; // You must configure all 1st before accessing the rest of tabs
+            if (e.TabPageIndex == 2)
+            {
+                MessageBox.Show("This is the admin area");
             }
         }
     }
