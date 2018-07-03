@@ -74,6 +74,20 @@
             this.statusLblConn = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusPbarPlaying = new System.Windows.Forms.ToolStripProgressBar();
             this.statusLblPlaying = new System.Windows.Forms.ToolStripStatusLabel();
+            this.grpboxDomain = new System.Windows.Forms.GroupBox();
+            this.cboxEntidad = new System.Windows.Forms.ComboBox();
+            this.cboxAlmacen = new System.Windows.Forms.ComboBox();
+            this.cboxPais = new System.Windows.Forms.ComboBox();
+            this.cboxRegion = new System.Windows.Forms.ComboBox();
+            this.cboxTienda = new System.Windows.Forms.ComboBox();
+            this.cboxProvincia = new System.Windows.Forms.ComboBox();
+            this.btnDomain = new System.Windows.Forms.Button();
+            this.lstboxDomains = new System.Windows.Forms.ListBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.txtboxURLServer = new System.Windows.Forms.TextBox();
+            this.btnURLServer = new System.Windows.Forms.Button();
+            this.lblURLServer = new System.Windows.Forms.Label();
+            this.errorSignal = new System.Windows.Forms.ErrorProvider(this.components);
             this.contextMainMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabMusic.SuspendLayout();
@@ -86,7 +100,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbarPubli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbarMusic)).BeginInit();
             this.grpboxHoras.SuspendLayout();
+            this.tabConfig.SuspendLayout();
             this.statusMain.SuspendLayout();
+            this.grpboxDomain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorSignal)).BeginInit();
             this.SuspendLayout();
             // 
             // notifyBarIcon
@@ -489,6 +506,10 @@
             // 
             // tabConfig
             // 
+            this.tabConfig.Controls.Add(this.lblURLServer);
+            this.tabConfig.Controls.Add(this.btnURLServer);
+            this.tabConfig.Controls.Add(this.txtboxURLServer);
+            this.tabConfig.Controls.Add(this.grpboxDomain);
             this.tabConfig.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabConfig.Location = new System.Drawing.Point(4, 22);
             this.tabConfig.Name = "tabConfig";
@@ -527,6 +548,7 @@
             // 
             // statusPbarPlaying
             // 
+            this.statusPbarPlaying.BackColor = System.Drawing.SystemColors.HighlightText;
             this.statusPbarPlaying.Name = "statusPbarPlaying";
             this.statusPbarPlaying.Size = new System.Drawing.Size(100, 16);
             this.statusPbarPlaying.Value = 40;
@@ -536,6 +558,170 @@
             this.statusLblPlaying.Name = "statusLblPlaying";
             this.statusLblPlaying.Size = new System.Drawing.Size(287, 17);
             this.statusLblPlaying.Text = "Playing \"Just cant get enough - Depeche Mode.mp3\"";
+            // 
+            // grpboxDomain
+            // 
+            this.grpboxDomain.Controls.Add(this.lstboxDomains);
+            this.grpboxDomain.Controls.Add(this.btnDelete);
+            this.grpboxDomain.Controls.Add(this.btnDomain);
+            this.grpboxDomain.Controls.Add(this.cboxTienda);
+            this.grpboxDomain.Controls.Add(this.cboxPais);
+            this.grpboxDomain.Controls.Add(this.cboxRegion);
+            this.grpboxDomain.Controls.Add(this.cboxProvincia);
+            this.grpboxDomain.Controls.Add(this.cboxAlmacen);
+            this.grpboxDomain.Controls.Add(this.cboxEntidad);
+            this.grpboxDomain.Location = new System.Drawing.Point(104, 51);
+            this.grpboxDomain.Name = "grpboxDomain";
+            this.grpboxDomain.Size = new System.Drawing.Size(555, 266);
+            this.grpboxDomain.TabIndex = 0;
+            this.grpboxDomain.TabStop = false;
+            this.grpboxDomain.Text = "Selección de Dominio";
+            // 
+            // cboxEntidad
+            // 
+            this.cboxEntidad.DisplayMember = "0";
+            this.cboxEntidad.FormattingEnabled = true;
+            this.cboxEntidad.Items.AddRange(new object[] {
+            "Grupo IFA"});
+            this.cboxEntidad.Location = new System.Drawing.Point(53, 19);
+            this.cboxEntidad.Name = "cboxEntidad";
+            this.cboxEntidad.Size = new System.Drawing.Size(121, 21);
+            this.cboxEntidad.Sorted = true;
+            this.cboxEntidad.TabIndex = 0;
+            this.cboxEntidad.Text = "(Entidad)";
+            // 
+            // cboxAlmacen
+            // 
+            this.cboxAlmacen.FormattingEnabled = true;
+            this.cboxAlmacen.Items.AddRange(new object[] {
+            "E.Leclerc",
+            "Valco",
+            "AhorraMas"});
+            this.cboxAlmacen.Location = new System.Drawing.Point(223, 19);
+            this.cboxAlmacen.Name = "cboxAlmacen";
+            this.cboxAlmacen.Size = new System.Drawing.Size(121, 21);
+            this.cboxAlmacen.TabIndex = 0;
+            this.cboxAlmacen.Text = "(Almacén)";
+            // 
+            // cboxPais
+            // 
+            this.cboxPais.FormattingEnabled = true;
+            this.cboxPais.Items.AddRange(new object[] {
+            "España",
+            "Francia",
+            "Portugal",
+            "Marruecos"});
+            this.cboxPais.Location = new System.Drawing.Point(383, 19);
+            this.cboxPais.Name = "cboxPais";
+            this.cboxPais.Size = new System.Drawing.Size(121, 21);
+            this.cboxPais.TabIndex = 0;
+            this.cboxPais.Text = "(País)";
+            // 
+            // cboxRegion
+            // 
+            this.cboxRegion.FormattingEnabled = true;
+            this.cboxRegion.Items.AddRange(new object[] {
+            "Andalucia",
+            "Castilla La Mancha"});
+            this.cboxRegion.Location = new System.Drawing.Point(53, 46);
+            this.cboxRegion.Name = "cboxRegion";
+            this.cboxRegion.Size = new System.Drawing.Size(121, 21);
+            this.cboxRegion.TabIndex = 0;
+            this.cboxRegion.Text = "(Región)";
+            // 
+            // cboxTienda
+            // 
+            this.cboxTienda.FormattingEnabled = true;
+            this.cboxTienda.Items.AddRange(new object[] {
+            "SU-9045",
+            "CA-9034"});
+            this.cboxTienda.Location = new System.Drawing.Point(383, 46);
+            this.cboxTienda.Name = "cboxTienda";
+            this.cboxTienda.Size = new System.Drawing.Size(121, 21);
+            this.cboxTienda.TabIndex = 0;
+            this.cboxTienda.Text = "(Tienda)";
+            // 
+            // cboxProvincia
+            // 
+            this.cboxProvincia.FormattingEnabled = true;
+            this.cboxProvincia.Items.AddRange(new object[] {
+            "Málaga",
+            "Huelva",
+            "Sevilla",
+            "Almería"});
+            this.cboxProvincia.Location = new System.Drawing.Point(223, 46);
+            this.cboxProvincia.Name = "cboxProvincia";
+            this.cboxProvincia.Size = new System.Drawing.Size(121, 21);
+            this.cboxProvincia.TabIndex = 0;
+            this.cboxProvincia.Text = "(Provincia)";
+            // 
+            // btnDomain
+            // 
+            this.btnDomain.BackColor = System.Drawing.Color.Green;
+            this.btnDomain.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDomain.Location = new System.Drawing.Point(223, 74);
+            this.btnDomain.Name = "btnDomain";
+            this.btnDomain.Size = new System.Drawing.Size(121, 23);
+            this.btnDomain.TabIndex = 1;
+            this.btnDomain.Text = "Añadir Dominio";
+            this.btnDomain.UseVisualStyleBackColor = false;
+            // 
+            // lstboxDomains
+            // 
+            this.lstboxDomains.FormattingEnabled = true;
+            this.lstboxDomains.HorizontalScrollbar = true;
+            this.lstboxDomains.Items.AddRange(new object[] {
+            "Grupo IFA - AhorrasMAS - España - Andalucía - Sevilla - SU9034",
+            "Grupo IFA - AhorrasMAS - España - Pescado",
+            "Grupo IFA - AhorrasMAS - España - Carnicería"});
+            this.lstboxDomains.Location = new System.Drawing.Point(54, 106);
+            this.lstboxDomains.Name = "lstboxDomains";
+            this.lstboxDomains.Size = new System.Drawing.Size(450, 121);
+            this.lstboxDomains.TabIndex = 2;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDelete.Location = new System.Drawing.Point(223, 233);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(121, 23);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Borrar Dominio";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // txtboxURLServer
+            // 
+            this.txtboxURLServer.Location = new System.Drawing.Point(226, 344);
+            this.txtboxURLServer.Name = "txtboxURLServer";
+            this.txtboxURLServer.Size = new System.Drawing.Size(241, 20);
+            this.txtboxURLServer.TabIndex = 1;
+            this.txtboxURLServer.Text = "http://server1.vidanio.com:8080";
+            // 
+            // btnURLServer
+            // 
+            this.btnURLServer.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnURLServer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnURLServer.Location = new System.Drawing.Point(487, 344);
+            this.btnURLServer.Name = "btnURLServer";
+            this.btnURLServer.Size = new System.Drawing.Size(121, 20);
+            this.btnURLServer.TabIndex = 2;
+            this.btnURLServer.Text = "Establecer URL";
+            this.btnURLServer.UseVisualStyleBackColor = false;
+            this.btnURLServer.Click += new System.EventHandler(this.btnURLServer_Click);
+            // 
+            // lblURLServer
+            // 
+            this.lblURLServer.AutoSize = true;
+            this.lblURLServer.Location = new System.Drawing.Point(154, 348);
+            this.lblURLServer.Name = "lblURLServer";
+            this.lblURLServer.Size = new System.Drawing.Size(66, 13);
+            this.lblURLServer.TabIndex = 3;
+            this.lblURLServer.Text = "URL Server:";
+            // 
+            // errorSignal
+            // 
+            this.errorSignal.ContainerControl = this;
             // 
             // MainForm
             // 
@@ -567,8 +753,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbarMusic)).EndInit();
             this.grpboxHoras.ResumeLayout(false);
             this.grpboxHoras.PerformLayout();
+            this.tabConfig.ResumeLayout(false);
+            this.tabConfig.PerformLayout();
             this.statusMain.ResumeLayout(false);
             this.statusMain.PerformLayout();
+            this.grpboxDomain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorSignal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -620,6 +810,20 @@
         private System.Windows.Forms.ToolStripStatusLabel statusLblConn;
         private System.Windows.Forms.ToolStripProgressBar statusPbarPlaying;
         private System.Windows.Forms.ToolStripStatusLabel statusLblPlaying;
+        private System.Windows.Forms.GroupBox grpboxDomain;
+        private System.Windows.Forms.ComboBox cboxTienda;
+        private System.Windows.Forms.ComboBox cboxPais;
+        private System.Windows.Forms.ComboBox cboxRegion;
+        private System.Windows.Forms.ComboBox cboxProvincia;
+        private System.Windows.Forms.ComboBox cboxAlmacen;
+        private System.Windows.Forms.ComboBox cboxEntidad;
+        private System.Windows.Forms.ListBox lstboxDomains;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnDomain;
+        private System.Windows.Forms.Label lblURLServer;
+        private System.Windows.Forms.Button btnURLServer;
+        private System.Windows.Forms.TextBox txtboxURLServer;
+        private System.Windows.Forms.ErrorProvider errorSignal;
     }
 }
 

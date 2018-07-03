@@ -138,5 +138,14 @@ namespace player
                 timeHasta.Value = timeDesde.Value;
             }
         }
+
+        private void btnURLServer_Click(object sender, EventArgs e)
+        {
+            errorSignal.Clear();
+            if ((txtboxURLServer.Text.Contains("http://") == false) && (txtboxURLServer.Text.Contains("https://") == false))
+            {
+                errorSignal.SetError(txtboxURLServer, "URL no válida !!!");
+            }
+        }
     }
 }
