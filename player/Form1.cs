@@ -151,7 +151,7 @@ namespace player
             }
         }
 
-        private void tabMenu_Selected(object sender, TabControlEventArgs e)
+        private void tabMenu_Selecting(object sender, TabControlCancelEventArgs e)
         {
             if (!enable_admin) return; // You must configure all 1st before accessing the rest of tabs
             if (e.TabPageIndex == 2)
