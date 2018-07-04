@@ -24,7 +24,7 @@ namespace player
         {
             if (!enable_salir)
             {
-                e.Cancel = true;
+                e.Cancel = true; // no cierra, evita el cierre del Form y por tanto de la app
                 this.Hide();
                 notifyBarIcon.ShowBalloonTip(100,"HMPro Player","Running in background", ToolTipIcon.Info);
             }
@@ -157,6 +157,8 @@ namespace player
             if (e.TabPageIndex == 2)
             {
                 MessageBox.Show("This is the admin area");
+                // si queremos que se quede en el mismo tab y no pase al 2 (admin) ponemos:
+                // e.Cancel = true;
             }
         }
     }
