@@ -144,10 +144,13 @@ namespace player
 
         private void btnURLServer_Click(object sender, EventArgs e)
         {
-            errorSignal.Clear();
             if ((txtboxURLServer.Text.Contains("http://") == false) && (txtboxURLServer.Text.Contains("https://") == false))
             {
                 errorSignal.SetError(txtboxURLServer, "URL no válida !!!");
+            }
+            else
+            {
+                errorSignal.SetError(txtboxURLServer, null);
             }
         }
 
@@ -173,6 +176,22 @@ namespace player
                 // axWMPMain.playState                      -> enum  WMPLib.WMPPlayState.wmppsPlaying/wmppsReady/wmppsMediaEnded
                 // (int) axWMPMain.playState                -> int 3/10/8 (https://docs.microsoft.com/es-es/windows/desktop/WMP/player-playstate)
                 // axWMPMain.PlayStateChange                -> evento
+            }
+        }
+
+        private void btnProxy_Click(object sender, EventArgs e)
+        {
+            if (txtboxProxy.Text == "") {
+                errorSignal.SetError(txtboxProxy, null);
+                return;
+            }
+            if ((txtboxProxy.Text.Contains("http://") == false) && (txtboxProxy.Text.Contains("https://") == false))
+            {
+                errorSignal.SetError(txtboxProxy, "URL no válida !!!");
+            }
+            else
+            {
+                errorSignal.SetError(txtboxProxy, null);
             }
         }
     }

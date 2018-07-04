@@ -88,6 +88,9 @@
             this.statusPbarPlaying = new System.Windows.Forms.ToolStripProgressBar();
             this.statusLblPlaying = new System.Windows.Forms.ToolStripStatusLabel();
             this.errorSignal = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtboxProxy = new System.Windows.Forms.TextBox();
+            this.btnProxy = new System.Windows.Forms.Button();
+            this.lblProxy = new System.Windows.Forms.Label();
             this.contextMainMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabMusic.SuspendLayout();
@@ -507,8 +510,11 @@
             // 
             // tabConfig
             // 
+            this.tabConfig.Controls.Add(this.lblProxy);
             this.tabConfig.Controls.Add(this.lblURLServer);
+            this.tabConfig.Controls.Add(this.btnProxy);
             this.tabConfig.Controls.Add(this.btnURLServer);
+            this.tabConfig.Controls.Add(this.txtboxProxy);
             this.tabConfig.Controls.Add(this.txtboxURLServer);
             this.tabConfig.Controls.Add(this.grpboxDomain);
             this.tabConfig.Cursor = System.Windows.Forms.Cursors.Default;
@@ -524,7 +530,7 @@
             // lblURLServer
             // 
             this.lblURLServer.AutoSize = true;
-            this.lblURLServer.Location = new System.Drawing.Point(154, 348);
+            this.lblURLServer.Location = new System.Drawing.Point(153, 323);
             this.lblURLServer.Name = "lblURLServer";
             this.lblURLServer.Size = new System.Drawing.Size(66, 13);
             this.lblURLServer.TabIndex = 3;
@@ -534,7 +540,7 @@
             // 
             this.btnURLServer.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnURLServer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnURLServer.Location = new System.Drawing.Point(487, 344);
+            this.btnURLServer.Location = new System.Drawing.Point(486, 319);
             this.btnURLServer.Name = "btnURLServer";
             this.btnURLServer.Size = new System.Drawing.Size(121, 20);
             this.btnURLServer.TabIndex = 2;
@@ -544,7 +550,7 @@
             // 
             // txtboxURLServer
             // 
-            this.txtboxURLServer.Location = new System.Drawing.Point(226, 344);
+            this.txtboxURLServer.Location = new System.Drawing.Point(225, 319);
             this.txtboxURLServer.Name = "txtboxURLServer";
             this.txtboxURLServer.Size = new System.Drawing.Size(241, 20);
             this.txtboxURLServer.TabIndex = 1;
@@ -561,7 +567,7 @@
             this.grpboxDomain.Controls.Add(this.cboxProvincia);
             this.grpboxDomain.Controls.Add(this.cboxAlmacen);
             this.grpboxDomain.Controls.Add(this.cboxEntidad);
-            this.grpboxDomain.Location = new System.Drawing.Point(104, 51);
+            this.grpboxDomain.Location = new System.Drawing.Point(103, 26);
             this.grpboxDomain.Name = "grpboxDomain";
             this.grpboxDomain.Size = new System.Drawing.Size(555, 266);
             this.grpboxDomain.TabIndex = 0;
@@ -724,6 +730,34 @@
             // 
             this.errorSignal.ContainerControl = this;
             // 
+            // txtboxProxy
+            // 
+            this.txtboxProxy.Location = new System.Drawing.Point(225, 355);
+            this.txtboxProxy.Name = "txtboxProxy";
+            this.txtboxProxy.Size = new System.Drawing.Size(241, 20);
+            this.txtboxProxy.TabIndex = 1;
+            // 
+            // btnProxy
+            // 
+            this.btnProxy.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnProxy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnProxy.Location = new System.Drawing.Point(486, 355);
+            this.btnProxy.Name = "btnProxy";
+            this.btnProxy.Size = new System.Drawing.Size(121, 20);
+            this.btnProxy.TabIndex = 2;
+            this.btnProxy.Text = "Establecer Proxy";
+            this.btnProxy.UseVisualStyleBackColor = false;
+            this.btnProxy.Click += new System.EventHandler(this.btnProxy_Click);
+            // 
+            // lblProxy
+            // 
+            this.lblProxy.AutoSize = true;
+            this.lblProxy.Location = new System.Drawing.Point(153, 359);
+            this.lblProxy.Name = "lblProxy";
+            this.lblProxy.Size = new System.Drawing.Size(61, 13);
+            this.lblProxy.TabIndex = 3;
+            this.lblProxy.Text = "Proxy URL:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -825,6 +859,9 @@
         private System.Windows.Forms.Button btnURLServer;
         private System.Windows.Forms.TextBox txtboxURLServer;
         private System.Windows.Forms.ErrorProvider errorSignal;
+        private System.Windows.Forms.Label lblProxy;
+        private System.Windows.Forms.Button btnProxy;
+        private System.Windows.Forms.TextBox txtboxProxy;
     }
 }
 
