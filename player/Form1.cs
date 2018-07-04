@@ -159,6 +159,20 @@ namespace player
                 MessageBox.Show("This is the admin area");
                 // si queremos que se quede en el mismo tab y no pase al 2 (admin) ponemos:
                 // e.Cancel = true;
+
+                // Cosas del axWMP control: (https://docs.microsoft.com/es-es/windows/desktop/WMP/object-model-reference-for-scripting) 
+                // axWMPMain.URL                            -> string con la URL del fichero a reproducir o la ruta OpenFileDialog.FileName
+                // axWMPMain.Ctlcontrols.play()             -> play
+                // axWMPMain.Ctlcontrols.stop()             -> stop
+                // axWMPMain.settings.volume                -> int de 0 a 100
+                // axWMPMain.settings.mute                  -> bool
+                // axWMPMain.currentMedia.duration          -> devuelve double con la duración en segundos del media actual
+                // axWMPMain.Ctlcontrols.currentPosition    -> devuelve double con la posición actual de reproducción del media actual
+                // axWMPMain.currentMedia.name              -> devuelve string con el nombre del media actual
+                // axWMPMain.Ctlcontrols.currentItem.name   -> devuelve string con el nombre del media actual
+                // axWMPMain.playState                      -> enum  WMPLib.WMPPlayState.wmppsPlaying/wmppsReady/wmppsMediaEnded
+                // (int) axWMPMain.playState                -> int 3/10/8 (https://docs.microsoft.com/es-es/windows/desktop/WMP/player-playstate)
+                // axWMPMain.PlayStateChange                -> evento
             }
         }
     }
