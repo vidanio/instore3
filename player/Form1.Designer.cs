@@ -91,7 +91,6 @@
             this.statusPbarPlaying = new System.Windows.Forms.ToolStripProgressBar();
             this.statusLblPlaying = new System.Windows.Forms.ToolStripStatusLabel();
             this.errorSignal = new System.Windows.Forms.ErrorProvider(this.components);
-            this.audioDjStudio1 = new AudioDjStudio.AudioDjStudio();
             this.contextMainMenu.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabMusic.SuspendLayout();
@@ -164,7 +163,6 @@
             // 
             // tabMusic
             // 
-            this.tabMusic.Controls.Add(this.audioDjStudio1);
             this.tabMusic.Controls.Add(this.axWMPMain);
             this.tabMusic.Controls.Add(this.axWMPMsg);
             this.tabMusic.Controls.Add(this.btnPlayMsg);
@@ -721,6 +719,10 @@
             // 
             this.toolTipMain.ShowAlways = true;
             // 
+            // fldbrwMusicFolder
+            // 
+            this.fldbrwMusicFolder.RootFolder = System.Environment.SpecialFolder.UserProfile;
+            // 
             // openMsgToPlay
             // 
             this.openMsgToPlay.Filter = "Audio MP3|*.mp3|Audio WMA|*.wma|Todos|*.*";
@@ -759,15 +761,6 @@
             // errorSignal
             // 
             this.errorSignal.ContainerControl = this;
-            // 
-            // audioDjStudio1
-            // 
-            this.audioDjStudio1.FaderSettings = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-            this.audioDjStudio1.LastError = AudioDjStudio.enumErrorCodes.ERR_NOERROR;
-            this.audioDjStudio1.Location = new System.Drawing.Point(8, 8);
-            this.audioDjStudio1.Name = "audioDjStudio1";
-            this.audioDjStudio1.Size = new System.Drawing.Size(48, 48);
-            this.audioDjStudio1.TabIndex = 8;
             // 
             // MainForm
             // 
@@ -873,7 +866,6 @@
         private System.Windows.Forms.Label lblProxy;
         private System.Windows.Forms.Button btnProxy;
         private System.Windows.Forms.TextBox txtboxProxy;
-        private AudioDjStudio.AudioDjStudio audioDjStudio1;
     }
 }
 
